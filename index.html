@@ -68,11 +68,6 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(166, 23, 23, 0.2); }
-            50% { box-shadow: 0 0 12px 2px rgba(166, 23, 23, 0.4); }
-        }
-
         .animate-fade-in {
             animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
@@ -112,7 +107,6 @@
             box-shadow: 0 10px 20px -5px rgba(255, 90, 10, 0.15);
         }
 
-        /* High Contrast Value Highlights */
         .val-text-contrast {
             color: #0f172a;
             font-weight: 800;
@@ -210,47 +204,45 @@
             </button>
         </div>
 
-        <!-- TAB 1: COMPARATIVE VIEW (VS) - ambas empresas en una sola pantalla -->
+        <!-- TAB 1: COMPARATIVE VIEW (VS) -->
         <div id="tab-comparative" class="space-y-6 animate-fade-in">
-
-            <!-- Cabeceras -->
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
-            <div class="bg-gradient-to-r from-peru-500 to-peru-700 rounded-2xl p-5 text-white shadow-md flex items-center justify-between">
-                <div>
-                    <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full uppercase tracking-wider font-semibold">Perufibra</span>
-                    <h2 class="text-xl font-bold mt-2">Perufibra · Reporte Estadístico</h2>
+                <div class="bg-gradient-to-r from-peru-500 to-peru-700 rounded-2xl p-5 text-white shadow-md flex items-center justify-between">
+                    <div>
+                        <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full uppercase tracking-wider font-semibold">Perufibra</span>
+                        <h2 class="text-xl font-bold mt-2">Perufibra · Reporte Estadístico</h2>
+                    </div>
+                    <div class="flex items-center gap-6 text-right">
+                        <div><div id="cmp-peru-efec" class="text-2xl font-black">0%</div><div class="text-xs text-white/80">Efectividad</div></div>
+                        <div><div id="cmp-peru-count" class="text-3xl font-black">0</div><div class="text-xs text-white/80">Total Asignados</div></div>
+                    </div>
                 </div>
-                <div class="flex items-center gap-6 text-right">
-                    <div><div id="cmp-peru-efec" class="text-2xl font-black">0%</div><div class="text-xs text-white/80">Efectividad</div></div>
-                    <div><div id="cmp-peru-count" class="text-3xl font-black">0</div><div class="text-xs text-white/80">Total Asignados</div></div>
+                <div class="bg-gradient-to-r from-win-500 to-win-700 rounded-2xl p-5 text-white shadow-md flex items-center justify-between">
+                    <div>
+                        <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full uppercase tracking-wider font-semibold">Win</span>
+                        <h2 class="text-xl font-bold mt-2">Win · Reporte Estadístico</h2>
+                    </div>
+                    <div class="flex items-center gap-6 text-right">
+                        <div><div id="cmp-win-efec" class="text-2xl font-black">0%</div><div class="text-xs text-white/80">Efectividad</div></div>
+                        <div><div id="cmp-win-count" class="text-3xl font-black">0</div><div class="text-xs text-white/80">Total Asignados</div></div>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-gradient-to-r from-win-500 to-win-700 rounded-2xl p-5 text-white shadow-md flex items-center justify-between">
-                <div>
-                    <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full uppercase tracking-wider font-semibold">Win</span>
-                    <h2 class="text-xl font-bold mt-2">Win · Reporte Estadístico</h2>
-                </div>
-                <div class="flex items-center gap-6 text-right">
-                    <div><div id="cmp-win-efec" class="text-2xl font-black">0%</div><div class="text-xs text-white/80">Efectividad</div></div>
-                    <div><div id="cmp-win-count" class="text-3xl font-black">0</div><div class="text-xs text-white/80">Total Asignados</div></div>
-                </div>
-            </div>
             </div>
 
             <!-- KPIs lado a lado -->
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
-            <div class="space-y-3">
-                <h3 class="text-xs font-extrabold uppercase tracking-wider text-peru-500 flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-peru-500 animate-pulse"></span> Perufibra - Indicadores Clave
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="peru-kpi-grid"></div>
-            </div>
-            <div class="space-y-3">
-                <h3 class="text-xs font-extrabold uppercase tracking-wider text-win-500 flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-win-500 animate-pulse"></span> Win - Indicadores Clave
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="win-kpi-grid"></div>
-            </div>
+                <div class="space-y-3">
+                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-peru-500 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-peru-500 animate-pulse"></span> Perufibra - Indicadores Clave
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="peru-kpi-grid"></div>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-win-500 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-win-500 animate-pulse"></span> Win - Indicadores Clave
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="win-kpi-grid"></div>
+                </div>
             </div>
 
             <!-- Superposición directa -->
@@ -269,132 +261,132 @@
 
             <!-- Estados -->
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-peru-500">
-                <h3 class="text-base font-bold text-slate-900 mb-1">Cantidades por Estado (Perufibra)</h3>
-                <p class="text-xs text-slate-500 mb-3">Números explícitos en cada barra</p>
-                <div class="relative h-72"><canvas id="cmp-peruBarChart"></canvas></div>
-            </div>
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-win-500">
-                <h3 class="text-base font-bold text-slate-900 mb-1">Cantidades por Estado (Win)</h3>
-                <p class="text-xs text-slate-500 mb-3">Números explícitos en cada barra</p>
-                <div class="relative h-72"><canvas id="cmp-winBarChart"></canvas></div>
-            </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-peru-500">
+                    <h3 class="text-base font-bold text-slate-900 mb-1">Cantidades por Estado (Perufibra)</h3>
+                    <p class="text-xs text-slate-500 mb-3">Números explícitos visibles en cada barra</p>
+                    <div class="relative h-72"><canvas id="cmp-peruBarChart"></canvas></div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-win-500">
+                    <h3 class="text-base font-bold text-slate-900 mb-1">Cantidades por Estado (Win)</h3>
+                    <p class="text-xs text-slate-500 mb-3">Números explícitos visibles en cada barra</p>
+                    <div class="relative h-72"><canvas id="cmp-winBarChart"></canvas></div>
+                </div>
             </div>
 
             <!-- Evolución -->
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-peru-500">
-                <h3 class="text-base font-bold text-slate-900 mb-1">Evolución (Perufibra)</h3>
-                <p class="text-xs text-slate-500 mb-3">Tendencia de volumen asignado</p>
-                <div class="relative h-72"><canvas id="cmp-peruLineChart"></canvas></div>
-            </div>
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-win-500">
-                <h3 class="text-base font-bold text-slate-900 mb-1">Evolución (Win)</h3>
-                <p class="text-xs text-slate-500 mb-3">Tendencia de volumen asignado</p>
-                <div class="relative h-72"><canvas id="cmp-winLineChart"></canvas></div>
-            </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-peru-500">
+                    <h3 class="text-base font-bold text-slate-900 mb-1">Evolución (Perufibra)</h3>
+                    <p class="text-xs text-slate-500 mb-3">Tendencia de volumen asignado</p>
+                    <div class="relative h-72"><canvas id="cmp-peruLineChart"></canvas></div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-win-500">
+                    <h3 class="text-base font-bold text-slate-900 mb-1">Evolución (Win)</h3>
+                    <p class="text-xs text-slate-500 mb-3">Tendencia de volumen asignado</p>
+                    <div class="relative h-72"><canvas id="cmp-winLineChart"></canvas></div>
+                </div>
             </div>
 
             <!-- Técnicos / Producción -->
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-peru-500 overflow-hidden">
-                <div class="p-4 border-b border-slate-100">
-                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-list-check text-peru-500"></i> Desglose Técnico por Cuadrilla (Perufibra)</h3>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-peru-500 overflow-hidden">
+                    <div class="p-4 border-b border-slate-100">
+                        <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-list-check text-peru-500"></i> Desglose Técnico por Cuadrilla (Perufibra)</h3>
+                    </div>
+                    <div class="overflow-auto max-h-96">
+                        <table class="w-full text-left text-xs text-slate-600">
+                            <thead class="bg-slate-50 text-slate-700 font-semibold border-b border-slate-200 sticky top-0">
+                                <tr>
+                                    <th class="p-3">Técnico / Cuadrilla</th>
+                                    <th class="p-3 text-center">Total</th>
+                                    <th class="p-3 text-center">Efectivos</th>
+                                    <th class="p-3 text-center">Reprog.</th>
+                                    <th class="p-3 text-center">Cancel.</th>
+                                    <th class="p-3 text-center">% Efec.</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cmp-peru-table-body" class="divide-y divide-slate-100">
+                                <tr><td colspan="6" class="p-4 text-center text-slate-400">Sin datos disponibles</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="overflow-auto max-h-96">
-                    <table class="w-full text-left text-xs text-slate-600">
-                        <thead class="bg-slate-50 text-slate-700 font-semibold border-b border-slate-200 sticky top-0">
-                            <tr>
-                                <th class="p-3">Técnico / Cuadrilla</th>
-                                <th class="p-3 text-center">Total</th>
-                                <th class="p-3 text-center">Efectivos</th>
-                                <th class="p-3 text-center">Reprog.</th>
-                                <th class="p-3 text-center">Cancel.</th>
-                                <th class="p-3 text-center">% Efec.</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cmp-peru-table-body" class="divide-y divide-slate-100">
-                            <tr><td colspan="6" class="p-4 text-center text-slate-400">Sin datos disponibles</td></tr>
-                        </tbody>
-                    </table>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-win-500 overflow-hidden">
+                    <div class="p-4 border-b border-slate-100">
+                        <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-list-check text-win-500"></i> Desglose Técnico por Cuadrilla (Win)</h3>
+                    </div>
+                    <div class="overflow-auto max-h-96">
+                        <table class="w-full text-left text-xs text-slate-600">
+                            <thead class="bg-slate-50 text-slate-700 font-semibold border-b border-slate-200 sticky top-0">
+                                <tr>
+                                    <th class="p-3">Técnico / Cuadrilla</th>
+                                    <th class="p-3 text-center">Total</th>
+                                    <th class="p-3 text-center">Efectivos</th>
+                                    <th class="p-3 text-center">Reprog.</th>
+                                    <th class="p-3 text-center">Cancel.</th>
+                                    <th class="p-3 text-center">% Efec.</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cmp-win-table-body" class="divide-y divide-slate-100">
+                                <tr><td colspan="6" class="p-4 text-center text-slate-400">Sin datos disponibles</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-win-500 overflow-hidden">
-                <div class="p-4 border-b border-slate-100">
-                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-list-check text-win-500"></i> Desglose Técnico por Cuadrilla (Win)</h3>
-                </div>
-                <div class="overflow-auto max-h-96">
-                    <table class="w-full text-left text-xs text-slate-600">
-                        <thead class="bg-slate-50 text-slate-700 font-semibold border-b border-slate-200 sticky top-0">
-                            <tr>
-                                <th class="p-3">Técnico / Cuadrilla</th>
-                                <th class="p-3 text-center">Total</th>
-                                <th class="p-3 text-center">Efectivos</th>
-                                <th class="p-3 text-center">Reprog.</th>
-                                <th class="p-3 text-center">Cancel.</th>
-                                <th class="p-3 text-center">% Efec.</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cmp-win-table-body" class="divide-y divide-slate-100">
-                            <tr><td colspan="6" class="p-4 text-center text-slate-400">Sin datos disponibles</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
             </div>
 
             <!-- Distritos (Perufibra) y Zonas (Win) -->
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-peru-500 overflow-hidden">
-                <div class="p-4 border-b border-slate-100">
-                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-peru-500"></i> Distribución por Distrito (Perufibra)</h3>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-peru-500 overflow-hidden">
+                    <div class="p-4 border-b border-slate-100">
+                        <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-peru-500"></i> Distribución por Distrito (Perufibra)</h3>
+                    </div>
+                    <div class="p-4"><div class="relative h-64"><canvas id="cmp-peruLocationChart"></canvas></div></div>
+                    <div class="p-4 border-t border-slate-100">
+                        <h4 class="text-xs font-bold text-slate-700 mb-2 flex items-center gap-2"><i class="fa-solid fa-city text-peru-500"></i> Resumen de Cobertura por Distrito</h4>
+                    </div>
+                    <div class="overflow-auto max-h-80">
+                        <table class="w-full text-left text-xs text-slate-600">
+                            <thead class="bg-slate-50 text-slate-700 font-semibold border-y border-slate-200 sticky top-0">
+                                <tr>
+                                    <th class="p-3">Distrito</th>
+                                    <th class="p-3 text-center">Total</th>
+                                    <th class="p-3 text-center">Efectivos</th>
+                                    <th class="p-3 text-center">Reprog. / Cancel.</th>
+                                    <th class="p-3 text-center">% Efect.</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cmp-peru-location-table-body" class="divide-y divide-slate-100">
+                                <tr><td colspan="5" class="p-4 text-center text-slate-400">Sin datos disponibles</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="p-4"><div class="relative h-64"><canvas id="cmp-peruLocationChart"></canvas></div></div>
-                <div class="p-4 border-t border-slate-100">
-                    <h4 class="text-xs font-bold text-slate-700 mb-2 flex items-center gap-2"><i class="fa-solid fa-city text-peru-500"></i> Resumen de Cobertura por Distrito</h4>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-win-500 overflow-hidden">
+                    <div class="p-4 border-b border-slate-100">
+                        <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-win-500"></i> Distribución por Zona (Win)</h3>
+                    </div>
+                    <div class="p-4"><div class="relative h-64"><canvas id="cmp-winLocationChart"></canvas></div></div>
+                    <div class="p-4 border-t border-slate-100">
+                        <h4 class="text-xs font-bold text-slate-700 mb-2 flex items-center gap-2"><i class="fa-solid fa-location-crosshairs text-win-500"></i> Resumen de Cobertura por Zona</h4>
+                    </div>
+                    <div class="overflow-auto max-h-80">
+                        <table class="w-full text-left text-xs text-slate-600">
+                            <thead class="bg-slate-50 text-slate-700 font-semibold border-y border-slate-200 sticky top-0">
+                                <tr>
+                                    <th class="p-3">Zona Operativa</th>
+                                    <th class="p-3 text-center">Total</th>
+                                    <th class="p-3 text-center">Efectivos</th>
+                                    <th class="p-3 text-center">Reprog. / Cancel.</th>
+                                    <th class="p-3 text-center">% Efect.</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cmp-win-location-table-body" class="divide-y divide-slate-100">
+                                <tr><td colspan="5" class="p-4 text-center text-slate-400">Sin datos disponibles</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="overflow-auto max-h-80">
-                    <table class="w-full text-left text-xs text-slate-600">
-                        <thead class="bg-slate-50 text-slate-700 font-semibold border-y border-slate-200 sticky top-0">
-                            <tr>
-                                <th class="p-3">Distrito</th>
-                                <th class="p-3 text-center">Total</th>
-                                <th class="p-3 text-center">Efectivos</th>
-                                <th class="p-3 text-center">Reprog. / Cancel.</th>
-                                <th class="p-3 text-center">% Efect.</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cmp-peru-location-table-body" class="divide-y divide-slate-100">
-                            <tr><td colspan="5" class="p-4 text-center text-slate-400">Sin datos disponibles</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-win-500 overflow-hidden">
-                <div class="p-4 border-b border-slate-100">
-                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-win-500"></i> Distribución por Zona (Win)</h3>
-                </div>
-                <div class="p-4"><div class="relative h-64"><canvas id="cmp-winLocationChart"></canvas></div></div>
-                <div class="p-4 border-t border-slate-100">
-                    <h4 class="text-xs font-bold text-slate-700 mb-2 flex items-center gap-2"><i class="fa-solid fa-location-crosshairs text-win-500"></i> Resumen de Cobertura por Zona</h4>
-                </div>
-                <div class="overflow-auto max-h-80">
-                    <table class="w-full text-left text-xs text-slate-600">
-                        <thead class="bg-slate-50 text-slate-700 font-semibold border-y border-slate-200 sticky top-0">
-                            <tr>
-                                <th class="p-3">Zona Operativa</th>
-                                <th class="p-3 text-center">Total</th>
-                                <th class="p-3 text-center">Efectivos</th>
-                                <th class="p-3 text-center">Reprog. / Cancel.</th>
-                                <th class="p-3 text-center">% Efect.</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cmp-win-location-table-body" class="divide-y divide-slate-100">
-                            <tr><td colspan="5" class="p-4 text-center text-slate-400">Sin datos disponibles</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
             </div>
         </div>
 
@@ -419,7 +411,7 @@
                 <!-- Bar Chart -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 transition-all hover:shadow-md">
                     <h3 class="text-base font-bold text-slate-900 mb-1">Cantidades por Estado (Perufibra)</h3>
-                    <p class="text-xs text-slate-500 mb-4">Visualización con números explícitos en cada barra</p>
+                    <p class="text-xs text-slate-500 mb-4">Visualización con números explícitos visibles en cada barra</p>
                     <div class="relative h-80">
                         <canvas id="peruBarChart"></canvas>
                     </div>
@@ -461,9 +453,8 @@
                 </div>
             </div>
 
-            <!-- NEW: District Breakdown Section for Perufibra -->
+            <!-- District Breakdown Section for Perufibra -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-2">
-                <!-- Location Distribution Doughnut -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 transition-all hover:shadow-md">
                     <h3 class="text-base font-bold text-slate-900 mb-1 flex items-center gap-2">
                         <i class="fa-solid fa-map-location-dot text-peru-500"></i> Distribución por Distrito
@@ -474,7 +465,6 @@
                     </div>
                 </div>
 
-                <!-- Location Table -->
                 <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden transition-all hover:shadow-md flex flex-col justify-between">
                     <div class="p-5 border-b border-slate-100">
                         <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2">
@@ -522,7 +512,7 @@
                 <!-- Bar Chart -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 transition-all hover:shadow-md">
                     <h3 class="text-base font-bold text-slate-900 mb-1">Cantidades por Estado (Win)</h3>
-                    <p class="text-xs text-slate-500 mb-4">Visualización con números explícitos en cada barra</p>
+                    <p class="text-xs text-slate-500 mb-4">Visualización con números explícitos visibles en cada barra</p>
                     <div class="relative h-80">
                         <canvas id="winBarChart"></canvas>
                     </div>
@@ -564,9 +554,8 @@
                 </div>
             </div>
 
-            <!-- NEW: Zone Breakdown Section for Win -->
+            <!-- Zone Breakdown Section for Win -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-2">
-                <!-- Location Distribution Doughnut -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 transition-all hover:shadow-md">
                     <h3 class="text-base font-bold text-slate-900 mb-1 flex items-center gap-2">
                         <i class="fa-solid fa-map-location-dot text-win-500"></i> Distribución por Zona
@@ -577,7 +566,6 @@
                     </div>
                 </div>
 
-                <!-- Location Table -->
                 <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden transition-all hover:shadow-md flex flex-col justify-between">
                     <div class="p-5 border-b border-slate-100">
                         <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2">
@@ -608,13 +596,11 @@
 
     <!-- Application Script -->
     <script>
-        // Global In-Memory Data (NO localStorage used)
         let globalData = {
             perufibra: null,
             win: null
         };
 
-        // Chart Instances
         let charts = {
             comparativeBar: null,
             comparativeLine: null,
@@ -644,7 +630,6 @@
             }, 3500);
         }
 
-        // Tab Switching Functionality
         function switchTab(tab) {
             const tabs = ['comparative', 'perufibra', 'win'];
             tabs.forEach(t => {
@@ -676,7 +661,6 @@
             }
         }
 
-        // Reset Data Functionality
         function resetData() {
             globalData.perufibra = null;
             globalData.win = null;
@@ -697,7 +681,6 @@
                 statusW.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin mr-1.5 text-slate-400"></i> Sin archivo cargado';
             }
 
-            // Destroy existing charts
             Object.keys(charts).forEach(key => {
                 if (charts[key]) {
                     charts[key].destroy();
@@ -705,7 +688,6 @@
                 }
             });
 
-            // Reset Tables & Badges
             document.getElementById('peru-kpi-grid').innerHTML = '';
             document.getElementById('win-kpi-grid').innerHTML = '';
             document.getElementById('peru-kpi-grid-tab2').innerHTML = '';
@@ -728,7 +710,6 @@
             showToast('Datos reiniciados completamente', 'error');
         }
 
-        // File Parsing Logic
         function handleFileUpload(type, event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -744,7 +725,6 @@
                     let rawJson = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
                     if (type === 'win') {
-                        // Pre-process Win: Skip rows until 'OrdenId' header row is reached
                         let headerIndex = -1;
                         for (let i = 0; i < rawJson.length; i++) {
                             const row = rawJson[i];
@@ -786,20 +766,17 @@
             reader.readAsArrayBuffer(file);
         }
 
-        // Data Normalization Logic
         function normalizeData(rawData, type) {
             if (!Array.isArray(rawData)) return [];
 
             return rawData.filter(row => {
                 if (!row || typeof row !== 'object') return false;
-                // Ignore completely empty rows
                 return Object.values(row).some(v => v !== null && v !== undefined && String(v).trim() !== '');
             }).map(row => {
                 let statusVal = 'DESCONOCIDO';
                 let techVal = 'NO ASIGNADO';
                 let locationVal = 'NO ESPECIFICADO';
 
-                // Look for status column while strictly ignoring decimal/numeric/time strings (e.g. 17.59, 18.69)
                 Object.keys(row).forEach(key => {
                     const cleanKey = key.trim().toLowerCase();
                     const valStr = String(row[key] || '').trim();
@@ -834,16 +811,13 @@
             }).filter(item => item.estado !== 'DESCONOCIDO');
         }
 
-        // Render All Analytical Views
         function renderAllDashboards() {
             const pData = globalData.perufibra || [];
             const wData = globalData.win || [];
 
-            // Update Header Totals
             document.getElementById('peru-count-badge').textContent = pData.length;
             document.getElementById('win-count-badge').textContent = wData.length;
 
-            // Generate KPIs
             const pKpis = calculateKpis(pData);
             const wKpis = calculateKpis(wData);
 
@@ -853,12 +827,10 @@
             renderKpiGrid('peru-kpi-grid-tab2', pKpis, '#A61717', 'kpi-card-peru');
             renderKpiGrid('win-kpi-grid-tab3', wKpis, '#FF5A0A', 'kpi-card-win');
 
-            // Render Charts
             renderComparativeCharts(pData, wData);
             renderIndividualCharts('peru', pData, '#A61717');
             renderIndividualCharts('win', wData, '#FF5A0A');
 
-            // Vista comparativa: ambas empresas en una sola pantalla
             renderIndividualCharts('peru', pData, '#A61717', 'cmp-');
             renderIndividualCharts('win', wData, '#FF5A0A', 'cmp-');
             document.getElementById('cmp-peru-count').textContent = pData.length;
@@ -870,7 +842,6 @@
             renderLocationTable('cmp-peru-location-table-body', pData, 'Distrito');
             renderLocationTable('cmp-win-location-table-body', wData, 'Zona Operativa');
 
-            // Render Tables
             renderTechTable('peru-table-body', pData);
             renderTechTable('win-table-body', wData);
 
@@ -878,7 +849,6 @@
             renderLocationTable('win-location-table-body', wData, 'Zona Operativa');
         }
 
-        // KPI Calculation
         function calculateKpis(data) {
             const total = data.length;
             if (total === 0) {
@@ -906,7 +876,6 @@
             return { total, efectivos, reprog, canc, rescate, ausentes, sinFftt, prod };
         }
 
-        // Render KPI Grid
         function renderKpiGrid(targetId, kpis, primaryColor, cardHoverClass) {
             const container = document.getElementById(targetId);
             if (!container) return;
@@ -960,7 +929,6 @@
             `;
         }
 
-        // Charts Helper: Grouping by State
         function groupCountsByState(data) {
             const counts = {};
             data.forEach(item => {
@@ -969,7 +937,6 @@
             return counts;
         }
 
-        // Grouping by Location
         function groupCountsByLocation(data) {
             const counts = {};
             data.forEach(item => {
@@ -978,7 +945,6 @@
             return counts;
         }
 
-        // Render Comparative View Charts
         function renderComparativeCharts(pData, wData) {
             const pCounts = groupCountsByState(pData);
             const wCounts = groupCountsByState(wData);
@@ -988,7 +954,6 @@
             const pValues = allStates.map(st => pCounts[st] || 0);
             const wValues = allStates.map(st => wCounts[st] || 0);
 
-            // 1. Comparative Bar Chart
             if (charts.comparativeBar) charts.comparativeBar.destroy();
             const ctxBar = document.getElementById('comparativeBarChart').getContext('2d');
             charts.comparativeBar = new Chart(ctxBar, {
@@ -1015,21 +980,25 @@
                     maintainAspectRatio: false,
                     plugins: {
                         datalabels: {
+                            display: true,
                             anchor: 'end',
                             align: 'end',
                             font: { weight: 'bold', size: 11 },
                             color: '#0f172a',
-                            formatter: (val) => val > 0 ? val : ''
+                            formatter: (val) => val !== undefined ? val : 0
                         }
                     },
                     scales: {
-                        y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                        y: { 
+                            beginAtZero: true, 
+                            grace: '15%',
+                            grid: { color: '#f1f5f9' } 
+                        },
                         x: { grid: { display: false } }
                     }
                 }
             });
 
-            // 2. Comparative Line Chart
             if (charts.comparativeLine) charts.comparativeLine.destroy();
             const ctxLine = document.getElementById('comparativeLineChart').getContext('2d');
             charts.comparativeLine = new Chart(ctxLine, {
@@ -1064,22 +1033,26 @@
                     maintainAspectRatio: false,
                     plugins: {
                         datalabels: {
+                            display: true,
                             anchor: 'end',
                             align: 'end',
                             font: { weight: 'bold', size: 11 },
                             color: '#0f172a',
-                            formatter: (val) => val > 0 ? val : ''
+                            formatter: (val) => val !== undefined ? val : 0
                         }
                     },
                     scales: {
-                        y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                        y: { 
+                            beginAtZero: true, 
+                            grace: '15%',
+                            grid: { color: '#f1f5f9' } 
+                        },
                         x: { grid: { display: false } }
                     }
                 }
             });
         }
 
-        // Render Individual Dashboard Charts
         function renderIndividualCharts(brand, data, color, prefix = '') {
             const counts = groupCountsByState(data);
             const labels = Object.keys(counts);
@@ -1089,7 +1062,6 @@
             const lineChartKey = prefix + brand + 'Line';
             const locChartKey = prefix + brand + 'Location';
 
-            // Bar Chart
             if (charts[barChartKey]) charts[barChartKey].destroy();
             const ctxBar = document.getElementById(`${prefix}${brand}BarChart`).getContext('2d');
             charts[barChartKey] = new Chart(ctxBar, {
@@ -1109,20 +1081,40 @@
                     plugins: {
                         legend: { display: false },
                         datalabels: {
-                            anchor: 'end',
-                            align: 'end',
+                            display: true,
+                            anchor: function(context) {
+                                const index = context.dataIndex;
+                                const val = context.dataset.data[index];
+                                const max = Math.max(...context.dataset.data);
+                                return val > max * 0.25 ? 'center' : 'end';
+                            },
+                            align: function(context) {
+                                const index = context.dataIndex;
+                                const val = context.dataset.data[index];
+                                const max = Math.max(...context.dataset.data);
+                                return val > max * 0.25 ? 'center' : 'end';
+                            },
                             font: { weight: 'bold', size: 12 },
-                            color: '#0f172a'
+                            color: function(context) {
+                                const index = context.dataIndex;
+                                const val = context.dataset.data[index];
+                                const max = Math.max(...context.dataset.data);
+                                return val > max * 0.25 ? '#ffffff' : '#0f172a';
+                            },
+                            formatter: (val) => val !== undefined ? val : 0
                         }
                     },
                     scales: {
-                        y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                        y: { 
+                            beginAtZero: true, 
+                            grace: '15%',
+                            grid: { color: '#f1f5f9' } 
+                        },
                         x: { grid: { display: false } }
                     }
                 }
             });
 
-            // Line Chart
             if (charts[lineChartKey]) charts[lineChartKey].destroy();
             const ctxLine = document.getElementById(`${prefix}${brand}LineChart`).getContext('2d');
             charts[lineChartKey] = new Chart(ctxLine, {
@@ -1146,20 +1138,25 @@
                     plugins: {
                         legend: { display: false },
                         datalabels: {
+                            display: true,
                             anchor: 'end',
                             align: 'end',
                             font: { weight: 'bold', size: 12 },
-                            color: '#0f172a'
+                            color: '#0f172a',
+                            formatter: (val) => val !== undefined ? val : 0
                         }
                     },
                     scales: {
-                        y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                        y: { 
+                            beginAtZero: true, 
+                            grace: '15%',
+                            grid: { color: '#f1f5f9' } 
+                        },
                         x: { grid: { display: false } }
                     }
                 }
             });
 
-            // Location Doughnut Chart
             const locCounts = groupCountsByLocation(data);
             const locLabels = Object.keys(locCounts);
             const locValues = Object.values(locCounts);
@@ -1189,6 +1186,7 @@
                     plugins: {
                         legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } },
                         datalabels: {
+                            display: true,
                             color: '#ffffff',
                             font: { weight: 'bold', size: 11 },
                             formatter: (val) => val > 0 ? val : ''
@@ -1198,7 +1196,6 @@
             });
         }
 
-        // Render Technical Crew Table
         function renderTechTable(targetId, data) {
             const body = document.getElementById(targetId);
             if (!body) return;
@@ -1241,7 +1238,6 @@
             body.innerHTML = html;
         }
 
-        // Render Location (District/Zone) Table
         function renderLocationTable(targetId, data, locationTitle) {
             const body = document.getElementById(targetId);
             if (!body) return;
@@ -1282,7 +1278,6 @@
             body.innerHTML = html;
         }
 
-        // On Load Init
         window.onload = function() {
             switchTab('comparative');
         };
