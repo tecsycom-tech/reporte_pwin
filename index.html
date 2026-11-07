@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perufibra & Win - Reporte de Gestión Estadístico</title>
+    <title>PF vs Win</title>
+    <!-- Icono de pestaña (Favicon) referente a la función analítica/estadística -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23A61717'/><path d='M8 24V17H12V24H8ZM14 24V10H18V24H14ZM20 24V14H24V24H20Z' fill='%23FF5A0A'/></svg>">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js for data visualization -->
@@ -133,10 +135,6 @@
             </div>
             
             <div class="flex items-center space-x-3">
-                <button onclick="loadDefaultUploadedData()" class="px-3.5 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition border border-slate-200 shadow-sm flex items-center gap-1.5 active:scale-95">
-                    <i class="fa-solid fa-file-arrow-down text-slate-600"></i> Cargar Archivos Adjuntos
-                </button>
-                <div class="h-6 w-px bg-slate-200"></div>
                 <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-sm">
                     <span class="w-1.5 h-1.5 mr-1.5 bg-emerald-500 rounded-full animate-ping"></span>
                     <span class="w-1.5 h-1.5 mr-1.5 bg-emerald-500 rounded-full -ml-3"></span> Sistema Listo
@@ -667,53 +665,6 @@
                 else if (tab === 'win') activeBtnEl.className = 'pb-3 text-sm font-medium tab-active-win transition-all flex items-center gap-2';
                 else activeBtnEl.className = 'pb-3 text-sm font-medium tab-active-comp transition-all flex items-center gap-2';
             }
-        }
-
-        // Default Data Pre-loading logic for demo/attachment loading
-        function loadDefaultUploadedData() {
-            // Sample simulated structure corresponding directly to Perufibra & Win formats
-            const samplePerufibra = [
-                { id: '1', estado: 'FINALIZADO', cuadrilla: 'TECNICO A', distrito: 'LIMA' },
-                { id: '2', estado: 'FINALIZADO', cuadrilla: 'TECNICO A', distrito: 'LIMA' },
-                { id: '3', estado: 'FINALIZADO', cuadrilla: 'TECNICO B', distrito: 'SANTIAGO DE SURCO' },
-                { id: '4', estado: 'FINALIZADO', cuadrilla: 'TECNICO B', distrito: 'SANTIAGO DE SURCO' },
-                { id: '5', estado: 'FINALIZADO', cuadrilla: 'TECNICO C', distrito: 'MIRAFLORES' },
-                { id: '6', estado: 'FINALIZADO', cuadrilla: 'TECNICO C', distrito: 'MIRAFLORES' },
-                { id: '7', estado: 'FINALIZADO', cuadrilla: 'TECNICO A', distrito: 'SAN BORJA' },
-                { id: '8', estado: 'FINALIZADO', cuadrilla: 'TECNICO B', distrito: 'SAN BORJA' },
-                { id: '9', estado: 'FINALIZADO', cuadrilla: 'TECNICO D', distrito: 'LOS OLIVOS' },
-                { id: '10', estado: 'FINALIZADO', cuadrilla: 'TECNICO D', distrito: 'LOS OLIVOS' },
-                { id: '11', estado: 'REPROGRAMA', cuadrilla: 'TECNICO A', distrito: 'LIMA' },
-                { id: '12', estado: 'REPROGRAMA', cuadrilla: 'TECNICO B', distrito: 'SANTIAGO DE SURCO' },
-                { id: '13', estado: 'REPROGRAMA', cuadrilla: 'TECNICO B', distrito: 'SANTIAGO DE SURCO' },
-                { id: '14', estado: 'REPROGRAMA', cuadrilla: 'TECNICO C', distrito: 'MIRAFLORES' },
-                { id: '15', estado: 'REPROGRAMA', cuadrilla: 'TECNICO D', distrito: 'SAN BORJA' },
-                { id: '16', estado: 'REPROGRAMA', cuadrilla: 'TECNICO D', distrito: 'SAN MIGUEL' },
-                { id: '17', estado: 'REPROGRAMA', cuadrilla: 'TECNICO A', distrito: 'SAN MIGUEL' },
-                { id: '18', estado: 'CANCELADO', cuadrilla: 'TECNICO A', distrito: 'LIMA' },
-                { id: '19', estado: 'CANCELADO', cuadrilla: 'TECNICO B', distrito: 'SANTIAGO DE SURCO' },
-                { id: '20', estado: 'EN CAMINO', cuadrilla: 'TECNICO C', distrito: 'MIRAFLORES' }
-            ];
-
-            const sampleWin = [
-                { OrdenId: '101', estado: 'Finalizada', cuadrilla: 'CUADRILLA 1', zona: 'ZONA CENTRO' },
-                { OrdenId: '102', estado: 'Finalizada', cuadrilla: 'CUADRILLA 1', zona: 'ZONA CENTRO' },
-                { OrdenId: '103', estado: 'Iniciada', cuadrilla: 'CUADRILLA 2', zona: 'ZONA NORTE' },
-                { OrdenId: '104', estado: 'Cancelada', cuadrilla: 'CUADRILLA 2', zona: 'ZONA NORTE' },
-                { OrdenId: '105', estado: 'Cancelada', cuadrilla: 'CUADRILLA 3', zona: 'ZONA SUR' },
-                { OrdenId: '106', estado: 'Cancelada', cuadrilla: 'CUADRILLA 3', zona: 'ZONA SUR' },
-                { OrdenId: '107', estado: 'Cancelada', cuadrilla: 'CUADRILLA 1', zona: 'ZONA CENTRO' },
-                { OrdenId: '108', estado: 'Cancelada', cuadrilla: 'CUADRILLA 2', zona: 'ZONA EAST' }
-            ];
-
-            globalData.perufibra = normalizeData(samplePerufibra, 'perufibra');
-            globalData.win = normalizeData(sampleWin, 'win');
-
-            updateUploadBadge('perufibra', 'Perufibra Adjunto Cargado (20 reg)');
-            updateUploadBadge('win', 'Win Adjunto Cargado (8 reg)');
-
-            renderAllDashboards();
-            showToast('Archivos integrados y procesados con éxito');
         }
 
         function updateUploadBadge(type, labelText) {
